@@ -1,0 +1,18 @@
+{
+  "name": "volunteer-registration-system---nodejs",
+  "version": "1.0.0",
+  "description": "This App is volunteers registration data in system.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Krunal Kotadiya",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "fontawesome": "^5.6.3"
+  }
+}
