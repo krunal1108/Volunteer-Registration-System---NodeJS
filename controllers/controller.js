@@ -1,13 +1,10 @@
 let storeVolunteerData = [];
 
-
 const defaultController = (req, res) => {
     console.log("Run Default Controller.");
 
     res.render('index', { volunteer: storeVolunteerData });
 };
-
-
 
 const VolRun = (req, res) => {
     console.log("Run Volunteer Appp.");
@@ -22,14 +19,8 @@ const VolRun = (req, res) => {
 
     storeVolunteerData = [...storeVolunteerData, VolId];
     console.log(storeVolunteerData);
-
-
     res.redirect('/');
-
 }
-
-
-
 
 const editVolController = (req, res) => {
     console.log("Run Edit Volunteer Appp.");
@@ -40,11 +31,7 @@ const editVolController = (req, res) => {
     });
     console.log("Single Volunteer for EDIT", singleVol);
     res.render('edit', { singleVol });
-
 }
-
-
-
 
 const updateVolController = (req, res) => {
     console.log("Run Update Volunteer Appp.");
@@ -61,26 +48,15 @@ const updateVolController = (req, res) => {
     res.redirect('/');
 }
 
-
-
 const deleteVolController = (req, res)=>{
     console.log("Run Delete Volunteer Appp.");
-
     let {id} = req.params;
-
     const deleteVol = storeVolunteerData.filter((data)=>{
         return data.id != id;
     });
-
     storeVolunteerData = deleteVol;
     console.log("Record DELETE Successfully.");
-    
     res.redirect('/');
 }
-
-
-
-
-
 
 module.exports = { defaultController, VolRun, editVolController, updateVolController, deleteVolController };
